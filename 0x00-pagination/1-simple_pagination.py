@@ -1,4 +1,4 @@
-#!user/bin/env python3
+#!/usr/bin/env python3
 """This module returns a paginated content of a csv file"""
 
 import csv
