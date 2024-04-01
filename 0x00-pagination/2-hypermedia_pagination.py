@@ -2,7 +2,6 @@
 """This module provides a pagination utility for a csv file"""
 
 import csv
-import math
 from typing import List, Tuple, Dict
 
 
@@ -50,8 +49,10 @@ class Server:
             prev_page = None
         if next_page * page_size > len(all_data):
             next_page = None
-        total_pages = int((math.floor(len(all_data) / page_size) +
-                           math.remainder(len(all_data), page_size)))
+        total_pages = int(len(all_data) // page_size)
+        remainder = len(all_data) % page_size
+        if remainder:
+            total_pages += 1
         return {
             'page_size': len(data),
             'page': page,
