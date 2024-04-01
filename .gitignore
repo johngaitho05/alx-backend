@@ -1,0 +1,7 @@
+!.mailmap
+# compiled python files
+*.py[co]
+__pycache__/
+.idea
+*.pyc
+
