@@ -5,7 +5,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """Defines a basic cache"""
+    """A Cache object that deletes the Last added/updated when full"""
 
     def __init__(self):
         super().__init__()

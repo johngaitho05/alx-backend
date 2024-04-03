@@ -5,7 +5,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """Defines a basic cache"""
+    """A Cache object that deletes the least recently used item when full"""
 
     def __init__(self):
         super().__init__()

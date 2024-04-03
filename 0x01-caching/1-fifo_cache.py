@@ -5,7 +5,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """Defines a basic cache"""
+    """A Cache object that deletes the first added/updated when full"""
 
     def __init__(self):
         super().__init__()
