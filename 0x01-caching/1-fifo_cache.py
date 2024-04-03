@@ -16,7 +16,8 @@ class FIFOCache(BaseCaching):
         """Delete the first item if needed"""
         if self.MAX_ITEMS != len(self.cache_data) or key in self.cache_data:
             return
-        sorted_dict = dict(sorted(self.cache_order.items(), key=lambda item: item[1]))
+        sorted_dict = dict(sorted(self.cache_order.items(),
+                                  key=lambda item: item[1]))
         deleted_key = next(iter(sorted_dict))
         del self.cache_data[deleted_key]
         del self.cache_order[deleted_key]
