@@ -34,7 +34,7 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         """Get an item by key"""
-        if key is None:
+        if key is None or key not in self.cache_data:
             return
         self.cache_order[key] = self.next_rank
         self.next_rank += 1
