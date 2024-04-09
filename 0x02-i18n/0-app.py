@@ -10,7 +10,7 @@ app.url_map.strict_slashes = False
 
 @app.route('/')
 def get_index() -> str:
-    """ Prints a Message when / is called """
+    """ Returns the home page of the app. """
     return render_template('0-index.html')
 
 
