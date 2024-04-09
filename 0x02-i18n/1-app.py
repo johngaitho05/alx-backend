@@ -20,7 +20,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def get_index() -> str:
+def hello_world() -> str:
     """ Returns the home page of the app. """
     return render_template('1-index.html')
 

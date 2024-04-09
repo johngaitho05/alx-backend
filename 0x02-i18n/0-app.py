@@ -9,7 +9,7 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def get_index() -> str:
+def hello_world() -> str:
     """ Returns the home page of the app. """
     return render_template('0-index.html')
 
