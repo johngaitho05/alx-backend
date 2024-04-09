@@ -1,12 +1,15 @@
-#!/usr/bin/python3
-""" Starts a Flash Web Application """
+#!/usr/bin/env python3
+"""A Basic Flask app.
+"""
 from flask import Flask, render_template
 
+
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
-@app.route('/', strict_slashes=False)
-def hello_world():
+@app.route('/')
+def get_index() -> str:
     """ Prints a Message when / is called """
     return render_template('0-index.html')
 
