@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 import pytz
+from datetime import datetime
 
 
 class Config(object):
@@ -85,13 +86,27 @@ def get_timezone() -> str:
 def get_index() -> str:
     """ GET /
     Return:
-        - template 7-index.html
+        - template 8-index.html
     """
-    return render_template('7-index.html', user=g.user)
+    return render_template('8-index.html', user=g.user)
+
+
+def get_current_time(user):
+    """Get the current time based on user's time zone"""
+    if user and user.get('timezone'):
+        try:
+            timezone = pytz.timezone(user['timezone'])
+            localized_time = datetime.now(
+                timezone).strftime("%b %d, %Y, %I:%M:%S %p")
+            return localized_time
+        except pytz.UnknownTimeZoneError:
+            pass
+
+    """Default to UTC if no valid time zone is found"""
+    return datetime.utcnow().strftime("%b %d, %Y, %I:%M:%S %p")
 
 
 if __name__ == "__main__":
     app.debug = True
     """Enable debug mode"""
     app.run(host="0.0.0.0", port="5000")
-    
