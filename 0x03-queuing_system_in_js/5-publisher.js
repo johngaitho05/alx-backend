@@ -1,4 +1,4 @@
-const redis = require('redis');
+import redis from 'redis';
 
 const publisher = redis.createClient();
 

@@ -1,5 +1,5 @@
-const kue = require('kue');
-const {job} = require("kue/lib/http/routes/json");
+import kue from 'kue';
+
 const queue = kue.createQueue();
 
 const jobs = [

@@ -1,4 +1,4 @@
-const kue = require('kue');
+import kue from 'kue';
 const queue = kue.createQueue();
 
 function sendNotification(phoneNumber, message) {
